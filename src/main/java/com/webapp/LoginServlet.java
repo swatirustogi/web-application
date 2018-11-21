@@ -10,16 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @WebServlet( urlPatterns="/login.do")
 public class LoginServlet extends HttpServlet{
-
+	
+	UserValidationService service = new UserValidationService();
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{
-		String name =  request.getParameter("name");
+		
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);	
+	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	{
+		String name = request.getParameter("name");
 		String password = request.getParameter("password");
-		System.out.println(request.getParameter("name"));
-		request.setAttribute("name", name);
-		request.setAttribute("password", password);
-		
-		request.getRequestDispatcher("/WEB-INF/views/NewFile.jsp").forward(request, response);
-		
-		}
+		System.out.println("name" + name);
+		boolean isUserValid=service.isUserValid(name, password);
+		if(isUserValid)
+		{	
+			request.setAttribute("name", request.getParameter("name"));
+			request.setAttribute("password", request.getParameter("password"));
+			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		}	
+		else
+		{	
+			request.setAttribute("errormsg", "Invalid user login details");
+			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+		}	
+	}
+	
 }

@@ -8,15 +8,15 @@
 <title>JSP Page</title>
 </head>
 
-<body>
- First JSP Page my name is ${name} and Password is ${password}
- 
- <%
 
-System.out.println("Scriptlets");
-System.out.println(request.getParameter("name"));
-Date date = new Date();
-%>
- <div>Current date is <%=date %></div>
+<body>
+ First JSP Page 
+ <form action="/login.do" method="post">
+ 	<p><font color="red">${errormsg}</font></p>
+ 	Name:	<input type = "text" name="name"/>
+ 	Password: <input type = "password" name="password"/>
+ 	<input type="submit" value="Login"/>
+ </form>
+
 </body>
 </html>

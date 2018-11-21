@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [22/Nov/2018:00:07:09 +0530] "GET /?name=swati&password=abc123 HTTP/1.1" 200 213 http-bio-8080-exec-8 18
+0:0:0:0:0:0:0:1 - - [22/Nov/2018:00:09:28 +0530] "GET /?name=swati&password=abc123 HTTP/1.1" 200 234 http-bio-8080-exec-1 184

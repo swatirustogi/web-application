@@ -9,7 +9,7 @@
 </head>
 
 <body>
- First JSP Page ${name}
+ First JSP Page my name is ${name} and Password is ${password}
  
  <%
 

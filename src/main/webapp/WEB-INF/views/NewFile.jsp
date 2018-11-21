@@ -7,6 +7,6 @@
 <title>JSP Page</title>
 </head>
 <body>
- First JSP Page
+ First JSP Page ${name}
 </body>
 </html>

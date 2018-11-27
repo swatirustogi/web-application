@@ -11,7 +11,7 @@
 
 <body>
  First JSP Page 
- <form action="/login.do" method="post">
+ <form action="/spring-mvc/login" method="post">
  	<p><font color="red">${errormsg}</font></p>
  	Name:	<input type = "text" name="name"/>
  	Password: <input type = "password" name="password"/>

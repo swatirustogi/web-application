@@ -1,4 +1,4 @@
-package com.webapp;
+package com.webapp.jee;
 
 import java.io.IOException;
 import java.io.PrintWriter;
